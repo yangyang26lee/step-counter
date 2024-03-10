@@ -4,19 +4,17 @@ input.onButtonPressed(Button.A, function () {
         basic.showNumber(3 - index)
     }
     music.play(music.tonePlayable(392, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    basic.showString("Go!!!")
     Step = 0
-    basic.showNumber(Step)
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showString("Great job!")
+    basic.showNumber(Step)
     datalogger.log(datalogger.createCV("Step", Step))
     Step = 0
-    basic.showNumber(Step)
+    basic.showIcon(IconNames.Happy)
 })
 input.onGesture(Gesture.Shake, function () {
     Step += 1
-    basic.showNumber(Step)
 })
 let Step = 0
 Step = 0
